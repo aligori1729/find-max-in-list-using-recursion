@@ -8,7 +8,6 @@ def get_max(lst,m):
    return lst[len(lst)-1]
   else:
    return m
- # return max(lst[len(lst)-1],m)
  else:
   m=max(lst[len(lst)-1],m)
   lst=lst[:len(lst)-1:]
@@ -16,7 +15,9 @@ def get_max(lst,m):
 
 print("Generating random number list")
 s=int(input("Enter length of list: "))
-lst=[random.randint(1,1000)
+min_interval=int(input("Enter min interval: "))
+max_interval=int(input("Enter max interval: "))
+lst=[random.randint(min_interval,max_interval)
 for _ in range(s)]
 print("List content:",lst)
 print("Max:",get_max(lst,lst[s-1]))
