@@ -4,7 +4,11 @@ def get_max(lst,m):
  if len(lst)==0:
   return m
  elif len(lst)==1:
-  return max(lst[len(lst)-1],m)
+  if lst[len(lst)-1]>m:
+   return lst[len(lst)-1]
+  else:
+   return m
+ # return max(lst[len(lst)-1],m)
  else:
   m=max(lst[len(lst)-1],m)
   lst=lst[:len(lst)-1:]
@@ -15,4 +19,4 @@ s=int(input("Enter length of list: "))
 lst=[random.randint(1,1000)
 for _ in range(s)]
 print("List content:",lst)
-print("Max value:",get_max(lst,0))
+print("Max:",get_max(lst,lst[s-1]))
